@@ -19,7 +19,7 @@ def simple_sort(list_to_sort: list):
         while True:
             if i <= 0:
                 break
-            elif t[i] >= t[i-1]:
+            elif simple_sort_t[i] >= simple_sort_t[i-1]:
                 break
             else:
                 change_position(simple_sort_t, i, i-1)
@@ -28,6 +28,7 @@ def simple_sort(list_to_sort: list):
 simple_sort(simple_sort_t)
 print(simple_sort_t)
 print()
+#TODO: NO FUNCIONA
 
 
 
@@ -39,7 +40,7 @@ def dicotomy_sort(list_to_sort: list):
         max_x = len(final) - 1
 
         while True:
-            if min_x < max_x:
+            if min_x > max_x:
                 final.insert(min_x, element)  # IMPORTANT: min_x is necessary, it inserts it where the less amount is needed
                 break
             else:
@@ -48,6 +49,8 @@ def dicotomy_sort(list_to_sort: list):
                     min_x = i + 1
                 else:  # element <= final[i]
                     max_x = i - 1
+    
+    return final
 
 t_final = dicotomy_sort(dicotomy_sort_t)
 print(t_final)
