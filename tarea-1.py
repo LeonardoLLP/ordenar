@@ -30,8 +30,7 @@ print(simple_sort_t)
 dicotomy_sort_t = t.copy()
 def dicotomy_sort(list_to_sort: list):
     final = []
-        for i in list_to_sort:
-            pass
+    for i in list_to_sort:
+        pass
 
 #! Not finished
-
