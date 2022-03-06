@@ -1,17 +1,31 @@
 # Como T es un COMPARABLE, usaremos enteros, ya que estos son derivados de CCOMPARABLE, pero se puede usar
 # cualquier tipo para el que la operación < o > esté definida
 
+from pyclbr import Function
 from random import randint
+from time import time
 
-t = [randint(1, 100) for _ in range(20)]
-print(t)
-print()
+t = [randint(1, 100) for _ in range(20000)]
+# print(t)
+# print()
 
 def change_position(obj_list: list, a: int, b: int):
     # x: variable temporal que almacena t[a] para cambiarlos
     x = obj_list[a]
     obj_list[a] = obj_list[b]
     obj_list[b] = x
+
+def execute_algorythm(sort: Function, list_to_order: list, print_list: bool = False):
+    initial_time = time()
+    sort(list_to_order)
+    total = time() - initial_time
+    if print_list:
+        print(list_to_order)
+    print("Algorythm: {}".format(sort))
+    print("Execution time: {}".format(total))
+    print()
+
+
 
 simple_sort_t = t.copy()
 def simple_sort(list_to_sort: list):
@@ -25,10 +39,7 @@ def simple_sort(list_to_sort: list):
                 change_position(simple_sort_t, i, i-1)
                 i -= 1
 
-simple_sort(simple_sort_t)
-print(simple_sort_t)
-print()
-#TODO: NO FUNCIONA
+execute_algorythm(simple_sort, simple_sort_t)
 
 
 
@@ -49,14 +60,15 @@ def dicotomy_sort(list_to_sort: list):
                     min_x = i + 1
                 else:  # element <= final[i]
                     max_x = i - 1
-    
-    return final
 
-t_final = dicotomy_sort(dicotomy_sort_t)
-print(t_final)
-print()
+    list_to_sort = final.copy()
+
+execute_algorythm(dicotomy_sort, dicotomy_sort_t)
 
 
 
+god_mode_sort_t = t.copy()
+def god_mode_sort(list_to_sort: list):
+    list_to_sort.sort()
 
-#! Not finished
+execute_algorythm(god_mode_sort, god_mode_sort_t)
