@@ -5,7 +5,7 @@ from random import randint
 
 t = [i + 1 for i in range(10)]
 
-conditions = [(randint(1, 10), randint(1, 10)) for _ in range(5)]
+conditions = [(randint(1, 10), randint(1, 10)) for _ in range(10)]
 conditions.sort()
 print(conditions)
 
@@ -43,15 +43,16 @@ while not all_conditions_met:
     for condition in conditions:
         if not check(condition):
             first, second = indexes(condition)
-            second_value = t.pop(second)  #? No es igual a condition[1] ???
+            second_value = t.pop(second)
             t.insert(first + 1, second_value)
 
     all_conditions_met = check_all(conditions)
 
-    #! Breaker to try code
+    #! Breaker
     i += 1
-    if i >= 10000:
+    if i >= 5000:
         print("Combination impossible to solve.")
+        print("Closest attempt:")
         break
 
 print(t)
