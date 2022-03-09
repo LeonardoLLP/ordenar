@@ -1,6 +1,6 @@
 # Ejercicios de ordenar  
 
-[Dirección del repositorio](https://github.com/LeonardoLLP/ordenar) / [Leonardo Luque Paganelli](https://github.com/LeonardoLLP)
+[Dirección del repositorio](https://github.com/LeonardoLLP/ordenar) / [Leonardo Luque Paganelli](https://github.com/LeonardoLLP)  
 
 Para estos ejercicios, el enunciado nos pedía usar un derivado de comparable. Para hacer la visualización del algoritmo muy sencilla, hemos elegido utilizar números enteros, y de esta forma simplificar el entendimiento de los algoritmos.  
 
