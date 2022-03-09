@@ -29,7 +29,7 @@ def check_all(conditions: list):
     for condition in conditions:
         if not check(condition):
             return False
-        return True
+    return True
 
 
 
@@ -44,14 +44,14 @@ while not all_conditions_met:
         if not check(condition):
             first, second = indexes(condition)
             second_value = t.pop(second)  #? No es igual a condition[1] ???
-            t.insert(second_value, first + 1)
+            t.insert(first + 1, second_value)
 
     all_conditions_met = check_all(conditions)
 
     #! Breaker to try code
     i += 1
     if i >= 10000:
-        print("Too long")
+        print("Combination impossible to solve.")
         break
 
 print(t)
