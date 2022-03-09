@@ -5,7 +5,10 @@ from pyclbr import Function
 from random import randint
 from time import time
 
-t = [randint(1, 100) for _ in range(20000)]
+n = 10000
+
+print("Ordenando {} elementos \n".format(n))
+t = [randint(1, 100) for _ in range(n)]
 # print(t)
 # print()
 

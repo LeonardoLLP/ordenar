@@ -3,14 +3,18 @@
 
 from random import randint
 
-t = [i + 1 for i in range(10)]
 
-conditions = [(randint(1, 10), randint(1, 10)) for _ in range(10)]
+n = 20
+c = 10
+
+t = [i + 1 for i in range(n)]
+
+conditions = [(randint(1, n), randint(1, n)) for _ in range(c)]
 conditions.sort()
 print(conditions)
 
-t = [i+1 for i in range(10)]
 
+print("Ordenando {} elementos con {} condiciones".format(n, c))
 
 def indexes(condition: tuple):
     i, j = condition
@@ -52,7 +56,7 @@ while not all_conditions_met:
     i += 1
     if i >= 5000:
         print("Combination impossible to solve.")
-        print("Closest attempt:")
+        print("Close attempt:")
         break
 
 print(t)

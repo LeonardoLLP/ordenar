@@ -1,7 +1,13 @@
 from random import randint
 
 # Modified variation just for purposes of visualisation
-t = [randint(1, (i+1)*10) for i in range(100)]
+
+n = 10000
+
+
+print("Aplicando algoritmo a {} elementos".format(n))
+
+t = [randint(1, (i+1)*10) for i in range(n)]
 print(t)
 print()
 
